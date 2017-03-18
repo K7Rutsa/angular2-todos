@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-list-alt"></span> Angular 2 Todos App with Local Storage !</a>
+    </div>
+  </div>
+</nav>
+<br>
+
+
+<div class="container">
+  <form>
+    <div class="form-group centerit">
+      <div class="col-sm-10 inputs">
+        <input class="form-control" autofocus type="text" #input (keypress)="keyup($event, input)">
+      </div>
+      <div class="col-sm-2">   
+        <button type="button" class="btn btn-primary" (click)="addTodos(input)">Add</button>
+      </div>
+    </div>
+  </form>
+</div>
+<hr>
+<br>
+<div class="container"> 
+	<div id="display"></div>
+</div>
+
+<div class="container" id="list">
+	<div class="col-md-10">
+		<ul class="list-group"> 
+		    <div *ngFor="let item of list; let i = index" id="list-wrapper">
+			 <li class="list-group-item" (click)="striker(i)">  <span class="glyphicon glyphicon-tag"></span> &nbsp; <strong> {{item.name | uppercase}} </strong> <span class="glyphicon glyphicon-remove badge" (click)="deleteTodo(i)"> </span> </li>
+			<br>
+			</div>
+		</ul>
+	</div>
+</div>
