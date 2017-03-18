@@ -32,6 +32,6 @@ export class TodosService {
 			localStorage.setItem("todos", JSON.stringify(todos));
 		}
 	});
-
+}
 
 }
